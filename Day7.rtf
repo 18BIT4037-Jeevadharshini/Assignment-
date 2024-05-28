@@ -1,0 +1,340 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs22\lang9 What is shell?\b0\par
+->It is a command line interpreter.\par
+->It translate the command entered by the user.\par
+->And converts them into a language that is  understand by the kernal.\par
+eg:-\par
+Take input from user ==> translate the commands  ==> language understand by Kernal.\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b What is Shell Scripting?\b0\par
+->It is a list of  shell commands, which are executed.\par
+->It is used to make the task automation.\par
+->In shell scripting we can give multiple commands\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b Where to use shell script?\par
+\b0 ->It is used for repeatative system task,\par
+eg:-\par
+-Backup file\par
+-Disk Management\par
+-System Monitor.\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b Terminal :-\par
+\b0 ->Terminal is a text based screen.\par
+->We can use commands in terminal\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b Types of Shell?\b0\par
+->Shell is we can interact with the kernel.\par
+1.Bourne shell\par
+2. C shell\par
+3. Korn shell, etc.\par
+-------------------------------------------------------------------------------------------------------------------\par
+To write Shell Program:-\par
+Hello World Program:-\par
+terminal type ->nano filename (helloworld.sh)\par
+-make a directory $ mkdir programs\par
+-nano helloworld.sh\par
+\b inside the nano shell:\b0\par
+==> #!/bin/sh -->which shell your are going to use\par
+==>#simple print program\par
+==>echo "Hello Welcome to shell script"\par
+eg_-\par
+1.Hello world program \par
+---------------------\par
+  terminal\par
+  ------------\par
+       nano helloworld.sh\par
+  to give permission:-\par
+  ---------------------     \par
+          chmod 777 helloworld.sh\par
+  to run:-\par
+  --------\par
+        ./helloworld.sh  \par
+output:\par
+hello world (which is written inside)\par
+-------------------------------------------------------------------------------------------------------------------\par
+variable:\par
+->It is used to store the value\par
+eg:-\par
+name = sachin\par
+age = 30\par
+-to call the variable use $variable\par
+echo "Your name is $name and age is $age"\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b User acceptable input:\par
+\b0 use\b  read \b0 which is input given by the user\par
+read a\par
+echo "Enter the value $a"\par
+read b\par
+echo "Enter the value b"\par
+read -p(ehich pass the variable) "Enter the value of c"  c\par
+echo "Value of c is $c"\par
+output:\par
+28\par
+Enter the value 28\par
+Enter the value b\par
+45\par
+Value of b is 45\par
+Enter the value of c 30\par
+Value of c is 30\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b Operators:-\par
+\ul\b0 Arithmethic operstors:-\ulnone\par
++,-,*,/,%,++,--\par
+/ - Quotient\par
+%- Remainder\par
+++ - Increment by 1\par
+-- Decrement by 1\par
+eg:-\par
+a = 10\par
+b = 5\par
+add=$((a+b))\par
+sub=$((a-b))\par
+mul=$((a*b))\par
+div=$((a/b))\par
+mol=$((a%b))\par
+echo "The result of add $add \\n sub $sub n mul $mul \\n div $div \\n mol $mol"\par
+output:-\par
+The result of add 20\par
+sub 5\par
+mul 50\par
+div 2\par
+mol 0\par
+-------------------------------------------------\par
+\ul Relational operator:-\ulnone\par
+a=10\par
+b=5\par
+greater=$((a>b))\par
+echo $greater \par
+output:-\par
+1 ==>true\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b Conditional Statement:-\par
+\ul\b0 if [condition]\par
+\ulnone then \par
+    echo\par
+else if [consition]\par
+eg:-\par
+a=4\par
+b=2\par
+if[ $a  -gt  $b ];then  \par
+      echo "a is greater"\par
+else\par
+      echo "b is greater"\par
+fi\par
+output:-\par
+a is greater\par
+--------------------------\par
+a=10\par
+if [ $a -gt 0 ];then\par
+      echo "Positive"\par
+else\par
+      echo "negative"\par
+fi\par
+output:-\par
+Positive\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b EvenOdd:-\b0\par
+num=10\par
+if [ $((num % 2)) -eq 0 ]\par
+then\par
+echo "Even"\par
+else\par
+echo "Odd"\par
+output:\par
+Even\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b FilePermission commands\b0\par
+-w ==> checking the file is Writable file or not\par
+eg:-\par
+#!/bin/sh\par
+read -p "Enter file name" filename\par
+if [ -w $filename ]\par
+then\par
+echo"Writable file"\par
+else\par
+echo"Non Writable file"\par
+fi\par
+\par
+output:\par
+Enter file name evenodd.sh\par
+Writablefile\par
+----------------------------------------------------\par
+-e ==>Check whether the file is exixt or not\par
+#!/bin/sh\par
+read -p "Enter file name" filename\par
+if [ -e $filename ]\par
+then\par
+echo"Present file"\par
+else\par
+echo"Not present file"\par
+fi\par
+output:\par
+Enter file name evenodd.sh\par
+Present file\par
+---------------------------------------------\par
+-d ==> Check the directory\par
+#!/bin/sh\par
+read -p "enter directory name : " directoryname\par
+if [ -d $directoryname ]\par
+then\par
+  echo "directory exist"\par
+else\par
+  echo "directory does not exist"\par
+fi\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b Loop statement:-\par
+\ul\b0 For Loop:-\par
+\ulnone #!/bin/sh\ul\par
+\ulnone for num in 1 2 3 4 5 6\par
+    do\par
+        echo "The number is $num"\par
+done\par
+output:-\par
+The number is 1\par
+The number is 2\par
+The number is 3\par
+The number is 4\par
+The number is 5\par
+The number is 6\par
+---------------------------------- \par
+\ul While-loop:-\par
+\ulnone #!/bin/sh\par
+a=1\par
+while [ $a -lt 5 ]\par
+do \par
+   echo "Value of a is $a"\par
+   a=$((a+1))\par
+done\par
+output:-\par
+Value of a is 1\par
+Value of a is 2\par
+Value of a is 3\par
+Value of a is 4\par
+---------------------------------------------------------------------------------------------\par
+\ul to display every file  home folder\par
+\ulnone #!/bin/sh\par
+cd /home/rps\par
+for file in *\par
+do\par
+   echo $file\par
+done\par
+-----------------------\par
+\ul to display every file in particulary directory\ulnone\par
+#\par
+for file in *\par
+do\par
+   echo $file\par
+done\par
+----------------------------\par
+#!/bin/sh\par
+#count\par
+count=0\par
+for files in *\par
+do\par
+  if [ -d $files ];then\par
+  count=$((count+1))\par
+fi\par
+done\par
+echo  "Total number of files present : $count"\par
+---------------------------------------------------------------------------------------------------------------\par
+\b Function:-\par
+\b0 #!/bin/sh\b\par
+\ul\b0 Function Definition\ulnone\par
+display()\par
+\{\par
+echo "display is a function"\par
+\}\par
+\ul #calling function\ulnone\par
+display\par
+output"-\par
+display is a function\par
+--------------------------------\par
+\ul Function with return value\par
+\ulnone #!/bin/sh\par
+sum()\par
+\{\par
+   return 10\par
+\}\par
+sum\par
+result=$? -->it will capture the return value\par
+echo "result $result"\par
+output:-\par
+result 10\par
+------------------------------------------------------------\par
+\ul Funtion with parameter:-\par
+\ulnone #!/bin/sh\par
+#funtion with argument\par
+sub()\par
+\{\par
+num1=$1   =>1st argument\par
+num2=$2   =>2nd argument\par
+sub=$(($num1-$num2))\par
+echo "Subtract $sub"\par
+\}\par
+sub 4 3\par
+----------------------------------------\par
+#!/bin/sh\par
+square()\par
+\{\par
+num=$1\par
+square=$((num*num))\par
+return $square\par
+\}\par
+square 2\par
+result=$?\par
+echo "The Square is $result"\par
+output:\par
+The square is 4\par
+-------------------------------------------------------------------------------------------------------------------\par
+\b Array:-\par
+\ul\b0 Array using function:\par
+\ulnone #!/bin/sh\ul\par
+\ulnone display()\par
+\{\par
+arg1=$1\par
+arg2=$2\par
+arg3=$@ ==>at the point print remaing elament also\par
+echo "Result of arg1: $arg1"\par
+echo "Result of arg2: $arg2"\par
+echo "Result of arg3: $arg3"\par
+\}\par
+display 1 2 3 4\par
+output:-\par
+Result of arg1: 1\par
+Result of arg2: 2\par
+Result of arg3: 1 2 3 4\par
+--------------------\par
+\ul Array using for-loop:-\par
+Number array\par
+\ulnone #!bin/bash\par
+marks=(10 12 13 14 18)\par
+for mark in "$\{marks[@]\}"\par
+do \par
+    echo "$mark"\par
+done\par
+output:\par
+10\par
+12\par
+13\par
+14\par
+18\par
+------------------------\par
+\ul String array\ulnone\par
+#!bin/bash\par
+names=("Mahi" "Rutu" "Jaddu")\par
+echo "The first name is : $\{names[0]\}\par
+for mark in "$\{names[@]\}"\par
+do \par
+    echo "$name"\par
+done\par
+output:\par
+The first name is : Mahi\par
+Mahi\par
+Rutu\par
+Jaddu\par
+-----------------------------------------------------------------------------\par
+\par
+\par
+}
+ 
